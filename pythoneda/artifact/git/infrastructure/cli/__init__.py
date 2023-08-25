@@ -1,7 +1,7 @@
 """
-pythoneda/git/infrastructure/__init__.py
+pythoneda/artifact/git/infrastructure/__init__.py
 
-This file ensures pythoneda.git.infrastructure is a namespace.
+This file ensures pythoneda.artifact.git.infrastructure is a namespace.
 
 Copyright (C) 2023-today rydnr's pythoneda-artifact/git-infrastructure
 
