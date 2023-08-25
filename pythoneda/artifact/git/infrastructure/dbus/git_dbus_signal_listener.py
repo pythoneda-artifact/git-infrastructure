@@ -25,7 +25,7 @@ from pythoneda.shared.artifact_changes.events.infrastructure.dbus import DbusCha
 from pythoneda.infrastructure.dbus import DbusSignalListener
 from typing import Dict
 
-class RydnrDbusSignalListener(DbusSignalListener):
+class GitDbusSignalListener(DbusSignalListener):
 
     """
     A PrimaryPort that listens to d-bus signals relevant to git-artifact.

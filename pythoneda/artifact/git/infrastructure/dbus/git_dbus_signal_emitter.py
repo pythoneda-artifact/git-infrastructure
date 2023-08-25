@@ -25,7 +25,7 @@ from pythoneda.shared.artifact_changes.events import ChangeStagingCodeDescribed
 from pythoneda.shared.artifact_changes.events.infrastructure.dbus import DbusChangeStagingCodeDescribed
 from typing import Dict
 
-class RydnrDbusSignalEmitter(DbusSignalEmitter):
+class GitDbusSignalEmitter(DbusSignalEmitter):
 
     """
     A Port that emits git-artifact events as d-bus signals.
