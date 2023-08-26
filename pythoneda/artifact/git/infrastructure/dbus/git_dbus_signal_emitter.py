@@ -53,7 +53,7 @@ class GitDbusSignalEmitter(DbusSignalEmitter):
         :rtype: Dict
         """
         result = {}
-        key = self.fqdn_key(ChangeStagingCodeDescribed)
+        key = self.__class__.full_class_name(ChangeStagingCodeDescribed)
         result[key] = [ DbusChangeStagingCodeDescribed, BusType.SYSTEM ]
 
         return result
