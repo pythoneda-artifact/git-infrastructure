@@ -61,11 +61,3 @@ class GitDbusSignalListener(DbusSignalListener):
             DbusChangeStagingCodeRequested, BusType.SYSTEM
         ]
         return result
-
-    def event_package(self):
-        """
-        Retrieves the event package.
-        :return: The package.
-        :rtype: str
-        """
-        return "pythoneda.realm.rydnr.events"
