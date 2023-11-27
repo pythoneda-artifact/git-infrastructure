@@ -20,8 +20,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 from dbus_next import BusType, Message
 from pythoneda.event import Event
-from pythoneda.shared.artifact.code.events import ChangeStagingCodeRequested
-from pythoneda.shared.artifact.code.events.infrastructure.dbus import (
+from pythoneda.shared.artifact.events.code import ChangeStagingCodeRequested
+from pythoneda.shared.artifact.events.code.infrastructure.dbus import (
     DbusChangeStagingCodeRequested,
 )
 from pythoneda.infrastructure.dbus import DbusSignalListener
