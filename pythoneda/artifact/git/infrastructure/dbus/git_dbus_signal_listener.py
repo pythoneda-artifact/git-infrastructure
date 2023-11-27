@@ -20,8 +20,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 from dbus_next import BusType, Message
 from pythoneda.event import Event
-from pythoneda.shared.artifact.events import ChangeStagingCodeRequested
-from pythoneda.shared.artifact.events.infrastructure.dbus import (
+from pythoneda.shared.artifact.code.events import ChangeStagingCodeRequested
+from pythoneda.shared.artifact.code.events.infrastructure.dbus import (
     DbusChangeStagingCodeRequested,
 )
 from pythoneda.infrastructure.dbus import DbusSignalListener
@@ -41,7 +41,7 @@ class GitDbusSignalListener(DbusSignalListener):
 
     Collaborators:
         - pythoneda.application.pythoneda.PythonEDA: Receives relevant domain events.
-        - pythoneda.shared.artifact.events.infrastructure.dbus.DbusChangeStagingCodeRequested
+        - pythoneda.shared.artifact.events.code.infrastructure.dbus.DbusChangeStagingCodeRequested
     """
 
     def __init__(self):

@@ -20,8 +20,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 from dbus_next import BusType
 from pythoneda.infrastructure.dbus import DbusSignalEmitter
-from pythoneda.shared.artifact.events import ChangeStagingCodeDescribed
-from pythoneda.shared.artifact.events.infrastructure.dbus import (
+from pythoneda.shared.artifact.events.code import ChangeStagingCodeDescribed
+from pythoneda.shared.artifact.events.code.infrastructure.dbus import (
     DbusChangeStagingCodeDescribed,
 )
 from typing import Dict
@@ -40,7 +40,7 @@ class GitDbusSignalEmitter(DbusSignalEmitter):
 
     Collaborators:
         - pythoneda.application.PythonEDA: Requests emitting events.
-        - pythoneda.shared.artifact.events.infrastructure.dbus.DbusChangeStagingCodeDescribed
+        - pythoneda.shared.artifact.events.code.infrastructure.dbus.DbusChangeStagingCodeDescribed
     """
 
     def __init__(self):
