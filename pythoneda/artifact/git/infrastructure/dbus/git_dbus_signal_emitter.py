@@ -20,9 +20,12 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 from dbus_next import BusType
 from pythoneda.infrastructure.dbus import DbusSignalEmitter
-from pythoneda.shared.artifact_changes.events import ChangeStagingCodeDescribed
-from pythoneda.shared.artifact_changes.events.infrastructure.dbus import DbusChangeStagingCodeDescribed
+from pythoneda.shared.artifact.events import ChangeStagingCodeDescribed
+from pythoneda.shared.artifact.events.infrastructure.dbus import (
+    DbusChangeStagingCodeDescribed,
+)
 from typing import Dict
+
 
 class GitDbusSignalEmitter(DbusSignalEmitter):
 
@@ -37,8 +40,9 @@ class GitDbusSignalEmitter(DbusSignalEmitter):
 
     Collaborators:
         - pythoneda.application.PythonEDA: Requests emitting events.
-        - pythoneda.shared.artifact_changes.events.infrastructure.dbus.DbusChangeStagingCodeDescribed
+        - pythoneda.shared.artifact.events.infrastructure.dbus.DbusChangeStagingCodeDescribed
     """
+
     def __init__(self):
         """
         Creates a new GitDbusSignalEmitter instance.
@@ -53,6 +57,6 @@ class GitDbusSignalEmitter(DbusSignalEmitter):
         """
         result = {}
         key = self.__class__.full_class_name(ChangeStagingCodeDescribed)
-        result[key] = [ DbusChangeStagingCodeDescribed, BusType.SYSTEM ]
+        result[key] = [DbusChangeStagingCodeDescribed, BusType.SYSTEM]
 
         return result
