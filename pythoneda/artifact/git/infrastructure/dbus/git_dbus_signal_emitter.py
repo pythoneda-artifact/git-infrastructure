@@ -1,3 +1,4 @@
+# vim: set fileencoding=utf-8
 """
 pythoneda/artifact/git/infrastructure/dbus/git_dbus_signal_emitter.py
 
@@ -19,11 +20,11 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 from dbus_next import BusType
-from pythoneda.infrastructure.dbus import DbusSignalEmitter
 from pythoneda.shared.artifact.events.code import ChangeStagingCodeDescribed
 from pythoneda.shared.artifact.events.code.infrastructure.dbus import (
     DbusChangeStagingCodeDescribed,
 )
+from pythoneda.shared.infrastructure.dbus import DbusSignalEmitter
 from typing import Dict
 
 
@@ -39,7 +40,7 @@ class GitDbusSignalEmitter(DbusSignalEmitter):
         - Emit git-artifact events as d-bus signals.
 
     Collaborators:
-        - pythoneda.application.PythonEDA: Requests emitting events.
+        - pythoneda.shared.application.PythonEDA: Requests emitting events.
         - pythoneda.shared.artifact.events.code.infrastructure.dbus.DbusChangeStagingCodeDescribed
     """
 
