@@ -19,17 +19,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-from dbus_next import BusType
-from pythoneda.shared.artifact.events.code import ChangeStagingCodeDescribed
-from pythoneda.shared.artifact.events.code.infrastructure.dbus import (
-    DbusChangeStagingCodeDescribed,
-)
 from pythoneda.shared.infrastructure.dbus import DbusSignalEmitter
-from typing import Dict
+from typing import List
 
 
 class GitDbusSignalEmitter(DbusSignalEmitter):
-
     """
     A Port that emits git-artifact events as d-bus signals.
 
@@ -41,7 +35,7 @@ class GitDbusSignalEmitter(DbusSignalEmitter):
 
     Collaborators:
         - pythoneda.shared.application.PythonEDA: Requests emitting events.
-        - pythoneda.shared.artifact.events.code.infrastructure.dbus.DbusChangeStagingCodeDescribed
+        - pythoneda.shared.artifact.events.code.infrastructure.dbus events
     """
 
     def __init__(self):
@@ -50,17 +44,16 @@ class GitDbusSignalEmitter(DbusSignalEmitter):
         """
         super().__init__()
 
-    def signal_emitters(self) -> Dict:
+    @classmethod
+    def event_packages(cls) -> List[str]:
         """
-        Retrieves the configured event emitters.
-        :return: For each event, a list with the event interface and the bus type.
-        :rtype: Dict
+        Retrieves the packages of the supported events.
+        :return: The packages.
+        :rtype: List[str]
         """
-        result = {}
-        key = self.__class__.full_class_name(ChangeStagingCodeDescribed)
-        result[key] = [DbusChangeStagingCodeDescribed, BusType.SYSTEM]
+        return ["pythoneda.shared.artifact.events.code.infrastructure.dbus"]
 
-        return result
+
 # vim: syntax=python ts=4 sw=4 sts=4 tw=79 sr et
 # Local Variables:
 # mode: python
